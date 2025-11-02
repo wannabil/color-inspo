@@ -57,7 +57,7 @@ export default function PalettePage() {
       opacity: 1,
       scale: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 200,
         damping: 20,
         staggerChildren: 0.1,
@@ -71,7 +71,7 @@ export default function PalettePage() {
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 200,
         damping: 20,
       },
