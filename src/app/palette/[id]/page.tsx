@@ -8,6 +8,8 @@ import { CopyButton } from "@/components/CopyButton";
 import { getInitialPalettes, hexToRgb, ColorPalette } from "@/lib/colors";
 import { Button } from "@/components/ui/button";
 
+export const runtime = 'edge';
+
 export default function PalettePage() {
   const params = useParams();
   const router = useRouter();
