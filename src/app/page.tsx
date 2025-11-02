@@ -33,27 +33,12 @@ export default function Home() {
 
   return (
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden p-4">
-      {/* Animated Dreamy Background */}
-      <motion.div
-        className="absolute inset-0 -z-10"
-        style={{
-          background:
-            "linear-gradient(45deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #1a1a2e 100%)",
-          backgroundSize: "400% 400%",
-        }}
-        animate={{
-          backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-        }}
-        transition={{
-          duration: 15,
-          ease: "easeInOut",
-          repeat: Infinity,
-        }}
-      />
+      {/* Animated Dreamy Background - CSS optimized for mobile */}
+      <div className="absolute inset-0 -z-10 animate-gradient bg-gradient-to-br from-[#1a1a2e] via-[#0f3460] to-[#533483]" />
       
-      {/* Floating orbs for dreamy effect */}
+      {/* Floating orbs - hidden on mobile for performance */}
       <motion.div
-        className="absolute left-[10%] top-[20%] h-64 w-64 rounded-full bg-purple-500/10 blur-3xl"
+        className="absolute left-[10%] top-[20%] hidden h-64 w-64 rounded-full bg-purple-500/10 blur-3xl md:block"
         animate={{
           x: [0, 50, 0],
           y: [0, 30, 0],
@@ -66,7 +51,7 @@ export default function Home() {
         }}
       />
       <motion.div
-        className="absolute right-[15%] top-[60%] h-80 w-80 rounded-full bg-blue-500/10 blur-3xl"
+        className="absolute right-[15%] top-[60%] hidden h-80 w-80 rounded-full bg-blue-500/10 blur-3xl md:block"
         animate={{
           x: [0, -30, 0],
           y: [0, 50, 0],
@@ -80,7 +65,7 @@ export default function Home() {
         }}
       />
       <motion.div
-        className="absolute bottom-[10%] left-[40%] h-72 w-72 rounded-full bg-pink-500/10 blur-3xl"
+        className="absolute bottom-[10%] left-[40%] hidden h-72 w-72 rounded-full bg-pink-500/10 blur-3xl md:block"
         animate={{
           x: [0, 40, 0],
           y: [0, -40, 0],

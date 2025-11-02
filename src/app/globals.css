@@ -120,3 +120,18 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* CSS animation for gradient background - more performant than JS */
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
