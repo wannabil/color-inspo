@@ -10,6 +10,13 @@ import { Button } from "@/components/ui/button";
 
 export const runtime = 'edge';
 
+export async function generateStaticParams() {
+  const palettes = getInitialPalettes();
+  return palettes.map((palette) => ({
+    id: palette.id,
+  }));
+}
+
 export default function PalettePage() {
   const params = useParams();
   const router = useRouter();
@@ -23,8 +30,7 @@ export default function PalettePage() {
     if (foundPalette) {
       setPalette(foundPalette);
     } else {
-      // If not found in initial palettes, it might be a generated one
-      // For now, redirect to home or show 404
+      // If not found in initial palettes, redirect to home
       router.push("/");
     }
   }, [params.id, router]);
