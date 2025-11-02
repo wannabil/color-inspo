@@ -8,8 +8,6 @@ import { CopyButton } from "@/components/CopyButton";
 import { getInitialPalettes, hexToRgb, ColorPalette } from "@/lib/colors";
 import { Button } from "@/components/ui/button";
 
-export const runtime = 'edge';
-
 export async function generateStaticParams() {
   const palettes = getInitialPalettes();
   return palettes.map((palette) => ({
